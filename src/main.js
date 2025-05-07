@@ -184,13 +184,16 @@ class pokeBattle {
     async #playerTurn() {
         console.log(" ==== Your Trun ===")
         console.log("Movesets: ")
+        await sleep(500);
         
         this.playerPoke.getMoves().map((move, index) => {
             console.log(`${index + 1} ${move.name} (${move.type}, Power: ${move.power}, PP: ${move.currentpp}/${move.pp})`)
         })
+        await sleep(1000);
 
         const answer = await ask(`Pick one from 1 - ${this.playerPoke.getMoves().length}: `)
         const selection = parseInt(answer) - 1;
+        await sleep(1000);
 
         if (isNaN(selection) || selection < 0 || selection >= this.playerPoke.getMoves().length) {
             console.log("Seriously -_- -_- -_-.");
@@ -201,29 +204,34 @@ class pokeBattle {
         const selectedMove = this.playerPoke.getMoves()[selection]
         if(selectedMove.currentpp <= 0) {
             console.log("Theres no pp left you dummy. Choose another one")
+            await sleep(1000);
             return await this.#playerTurn();
         }
 
-        selectedMove.currentpp --;
+        selectedMove.currentpp--;
 
         this.#executeAttack(this.playerPoke, this.enemyPoke, selectedMove)
     }
 
     async #enemyTurn() {
-        console.log("enemy")
-        await sleep(1000)
+        console.log("=== Enemy Turn ==")
+        await sleep(500);
+        const selectedMove = this.enemyPoke.getMoves()[Math.floor(Math.random() * this.enemyPoke.getMoves().length)]
+        console.log(`${this.enemyPoke.getName()} used ${selectedMove}`)
+        await sleep(500);
+
+        selectedMove.currentpp--;
+        this.#executeAttack(this.enemyPoke, this.playerPoke, selectedMove)
     }
 
     async #executeAttack(attacker, defender, move) {
         const typeEffectiveness = types[move.type][defender.getType()]
-        console.log(types[move.type][defender.getType()])
-        console.log(typeEffectiveness)
         let damage = 0;
 
         if (move.category === "physical") {
-            damage = Math.floor((((2 * 50 / 5 + 2) * move.power * attacker.attack / defender.defense) / 50) + 2);
+            damage = Math.floor((((2 * 50 / 5 + 2) * move.power * attacker.getStat("attack") / defender.getStat("defense")) / 50) + 2);
         } else if (move.category === "special") {
-            damage = Math.floor((((2 * 50 / 5 + 2) * move.power * attacker.specialAttack / defender.specialDefense) / 50) + 2);
+            damage = Math.floor((((2 * 50 / 5 + 2) * move.power * attacker.getStat("specialAttack") / defender.getStat("specialDefense")) / 50) + 2);
         }
 
         damage = Math.floor(damage * typeEffectiveness);
@@ -237,28 +245,29 @@ class pokeBattle {
         // ini akurat kek di game btw
         damage = Math.floor(damage * (0.85 + Math.random() * 0.15));
     
-
         damage = Math.max(1, damage);
-    
 
-        defender.currentHp = Math.max(0, defender.currentHp - damage);
-    
+        defender.getAttacked(damage)
 
         if (typeEffectiveness > 1) {
         console.log("It's super effective!");
+        await sleep(1000);
         } else if (typeEffectiveness < 1 && typeEffectiveness > 0) {
         console.log("It's not very effective...");
+        await sleep(1000);
         } else if (typeEffectiveness === 0) {
-        console.log(`It doesn't affect ${defender.name} at all ...`);
+        console.log(`It doesn't affect ${defender.getName()} at all ...`);
         console.log("Learn Your Type Chart!! ")
+        await sleep(1000);
         }
         
-        console.log(`${defender.name} took ${damage} damage!`);
+        console.log(`${defender.getName()} took ${damage} damage!`);
+        await sleep(1000);
     } 
 
-    #endGame() {
+    async #endGame() {
         console.log("=====The Game Is Over======")
-        endrl()
+        await endrl()
     }
 };
 
