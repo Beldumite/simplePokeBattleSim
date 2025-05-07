@@ -189,16 +189,16 @@ class pokeBattle {
             console.log(`${index + 1} ${move.name} (${move.type}, Power: ${move.power}, PP: ${move.currentpp}/${move.pp})`)
         })
 
-        const answer = await ask(`Pick one from 1 - ${this.playerPoke.getMoves().length}`)
-        const selected = parseInt(answer) - 1;
+        const answer = await ask(`Pick one from 1 - ${this.playerPoke.getMoves().length}: `)
+        const selection = parseInt(answer) - 1;
 
-        if (isNaN(selection) || selection < 0 || selection >= this.playerPoke.moves.length) {
+        if (isNaN(selection) || selection < 0 || selection >= this.playerPoke.getMoves().length) {
             console.log("Seriously -_- -_- -_-.");
             console.log("Pick Something From the list Please")
             return await this.#playerTurn();
           }
         
-        const selectedMove = this.playerPoke.move[selected]
+        const selectedMove = this.playerPoke.getMoves()[selection]
         if(selectedMove.currentpp <= 0) {
             console.log("Theres no pp left you dummy. Choose another one")
             return await this.#playerTurn();
@@ -215,7 +215,45 @@ class pokeBattle {
     }
 
     async #executeAttack(attacker, defender, move) {
-        const typeEffectiveness = types[t]
+        const typeEffectiveness = types[move.type][defender.getType()]
+        console.log(types[move.type][defender.getType()])
+        console.log(typeEffectiveness)
+        let damage = 0;
+
+        if (move.category === "physical") {
+            damage = Math.floor((((2 * 50 / 5 + 2) * move.power * attacker.attack / defender.defense) / 50) + 2);
+        } else if (move.category === "special") {
+            damage = Math.floor((((2 * 50 / 5 + 2) * move.power * attacker.specialAttack / defender.specialDefense) / 50) + 2);
+        }
+
+        damage = Math.floor(damage * typeEffectiveness);
+
+        const isCritical = Math.random() < (move.critRatio ? 1/8 : 1/16);
+        if (isCritical) {
+          damage = Math.floor(damage * 1.5);
+          console.log("A critical hit!");
+        }
+
+        // ini akurat kek di game btw
+        damage = Math.floor(damage * (0.85 + Math.random() * 0.15));
+    
+
+        damage = Math.max(1, damage);
+    
+
+        defender.currentHp = Math.max(0, defender.currentHp - damage);
+    
+
+        if (typeEffectiveness > 1) {
+        console.log("It's super effective!");
+        } else if (typeEffectiveness < 1 && typeEffectiveness > 0) {
+        console.log("It's not very effective...");
+        } else if (typeEffectiveness === 0) {
+        console.log(`It doesn't affect ${defender.name} at all ...`);
+        console.log("Learn Your Type Chart!! ")
+        }
+        
+        console.log(`${defender.name} took ${damage} damage!`);
     } 
 
     #endGame() {
