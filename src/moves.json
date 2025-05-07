@@ -1,0 +1,104 @@
+{
+    "tackle": {
+      "name": "Tackle",
+      "type": "normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "category": "physical",
+      "description": "A physical attack in which the user charges and slams into the target with its whole body."
+    },
+    "scratch": {
+      "name": "Scratch",
+      "type": "normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 35,
+      "category": "physical",
+      "description": "Hard, pointed, sharp claws rake the target to inflict damage."
+    },
+    "ember": {
+      "name": "Ember",
+      "type": "fire",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "category": "special",
+      "description": "The target is attacked with small flames. This may also leave the target with a burn."
+    },
+    "waterGun": {
+      "name": "Water Gun",
+      "type": "water",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 25,
+      "category": "special",
+      "description": "The target is blasted with a forceful shot of water."
+    },
+    "thunderShock": {
+      "name": "Thunder Shock",
+      "type": "electric",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "category": "special",
+      "description": "A jolt of electricity is hurled at the target to inflict damage. This may also leave the target with paralysis."
+    },
+    "vineWhip": {
+      "name": "Vine Whip",
+      "type": "grass",
+      "power": 45,
+      "accuracy": 100,
+      "pp": 25,
+      "category": "physical",
+      "description": "The target is struck with slender, whiplike vines to inflict damage."
+    },
+    "quickAttack": {
+      "name": "Quick Attack",
+      "type": "normal",
+      "power": 40,
+      "accuracy": 100,
+      "pp": 30,
+      "category": "physical",
+      "priority": 1,
+      "description": "The user lunges at the target at a speed that makes it almost invisible. This move always goes first."
+    },
+    "flamethrower": {
+      "name": "Flamethrower",
+      "type": "fire",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "category": "special",
+      "description": "The target is scorched with an intense blast of fire. This may also leave the target with a burn."
+    },
+    "hydroPump": {
+      "name": "Hydro Pump",
+      "type": "water",
+      "power": 110,
+      "accuracy": 80,
+      "pp": 5,
+      "category": "special",
+      "description": "The target is blasted by a huge volume of water launched under great pressure."
+    },
+    "thunderbolt": {
+      "name": "Thunderbolt",
+      "type": "electric",
+      "power": 90,
+      "accuracy": 100,
+      "pp": 15,
+      "category": "special",
+      "description": "A strong electric blast crashes down on the target. This may also leave the target with paralysis."
+    },
+    "razorLeaf": {
+      "name": "Razor Leaf",
+      "type": "grass",
+      "power": 55,
+      "accuracy": 95,
+      "pp": 25,
+      "category": "physical",
+      "critRatio": 2,
+      "description": "Sharp-edged leaves are launched to slash at the opposing Pokémon. Critical hits land more easily."
+    }
+  }
+  
