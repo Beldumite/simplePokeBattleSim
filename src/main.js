@@ -157,6 +157,11 @@ class pokeBattle {
     }
 
     async battleLoop() {
+        if (this.playerPoke.isFainted() || this.enemyPoke.isFainted()) {
+            return;
+        }
+        this.battleStatus()
+
         if(this.isPlayerturn) {
             await this.#playerTurn()
             this.isPlayerturn = false
@@ -167,18 +172,18 @@ class pokeBattle {
 
 
         if(this.playerPoke.isFainted()) {
-            console.log(`Noob ${this.playerPoke.getName()} Has Fainted`)
+            console.log(`Noob! your ${this.playerPoke.getName()} Has Fainted`)
             await sleep(1000);
             console.log("So you loose the battle")
-            this.#endGame()
+            await this.#endGame()
         } else if(this.enemyPoke.isFainted()) {
-            console.log(`Nice!! ${this.enemyPoke.getName()} Has Fainted`)
+            console.log(`Nice!! the enemy ${this.enemyPoke.getName()} Has Fainted`)
             await sleep(1000);
             console.log("You Won The Battle")
-            this.#endGame()
+            await this.#endGame()
         }
-        this.battleStatus()
-        this.battleLoop()
+        
+        await this.battleLoop()
     }
 
     async #playerTurn() {
@@ -210,18 +215,18 @@ class pokeBattle {
 
         selectedMove.currentpp--;
 
-        this.#executeAttack(this.playerPoke, this.enemyPoke, selectedMove)
+        await this.#executeAttack(this.playerPoke, this.enemyPoke, selectedMove)
     }
 
     async #enemyTurn() {
         console.log("=== Enemy Turn ==")
         await sleep(500);
         const selectedMove = this.enemyPoke.getMoves()[Math.floor(Math.random() * this.enemyPoke.getMoves().length)]
-        console.log(`${this.enemyPoke.getName()} used ${selectedMove}`)
+        console.log(`enemy ${this.enemyPoke.getName()} used ${selectedMove.name}`)
         await sleep(500);
 
         selectedMove.currentpp--;
-        this.#executeAttack(this.enemyPoke, this.playerPoke, selectedMove)
+        await this.#executeAttack(this.enemyPoke, this.playerPoke, selectedMove)
     }
 
     async #executeAttack(attacker, defender, move) {

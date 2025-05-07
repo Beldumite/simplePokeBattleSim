@@ -99,6 +99,33 @@
       "category": "physical",
       "critRatio": 2,
       "description": "Sharp-edged leaves are launched to slash at the opposing Pokémon. Critical hits land more easily."
+    },
+    "iceBeam": {
+        "name": "Ice Beam",
+        "type": "ice",
+        "power": 90,
+        "accuracy": 100,
+        "pp": 10,
+        "category": "special",
+        "description": "The target is struck with an icy-cold beam of energy. This may also leave the target frozen."
+    },
+    "blizzard": {
+        "name": "Blizzard",
+        "type": "ice",
+        "power": 110,
+        "accuracy": 70,
+        "pp": 5,
+        "category": "special",
+        "description": "A howling blizzard is summoned to strike the target. This may also leave the target frozen."
+    },
+    "solarBeam": {
+        "name": "Solar Beam",
+        "type": "grass",
+        "power": 120,
+        "accuracy": 100,
+        "pp": 10,
+        "category": "special",
+        "description": "A two-turn attack. The user gathers light, then blasts a bundled beam on the next turn."
     }
   }
   

@@ -50,6 +50,32 @@
         "speed": 45
       },
       "moves": ["tackle", "vineWhip", "razorLeaf", "quickAttack"]
-    }
+    },
+    "glaceon": {
+        "name": "Glaceon",
+        "type": "ice",
+        "stats": {
+          "hp": 65,
+          "attack": 60,
+          "defense": 110,
+          "specialAttack": 130,
+          "specialDefense": 95,
+          "speed": 65
+        },
+        "moves": ["tackle", "quickAttack", "iceBeam", "blizzard"]
+      },
+      "leafeon": {
+        "name": "Leafeon",
+        "type": "grass",
+        "stats": {
+          "hp": 65,
+          "attack": 110,
+          "defense": 130,
+          "specialAttack": 60,
+          "specialDefense": 65,
+          "speed": 95
+        },
+        "moves": ["tackle", "quickAttack", "razorLeaf", "solarBeam"]
+      }
   }
   
