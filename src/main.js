@@ -1,7 +1,7 @@
 // ok as you can see this is the code for this vocation project
 // its a pokemon battle sim yeyeyyyyy
 // ive been longing to make this for a long time
-// lets see if i get this right
+// lets see if i get this rignodeht
 
 import { resolve } from 'path';
 import { ask, endrl } from './ask.js';
@@ -80,8 +80,12 @@ class Pokemon {
     }
     //abstraction
 
+    #reduceCurrentHP(damage){
+        return Math.max(0, this.#currentHp - damage);
+    }
+
     getAttacked(damage) {
-        this.#currentHp = Math.max(0, this.#currentHp - damage);
+        this.#currentHp = this.#reduceCurrentHP(damage);
     }
 
     isFainted() {
@@ -112,13 +116,17 @@ class pokeBattle {
         this.battleLoop()
     }
 
-    async selectPlayerPokemon() {
-        console.log("Available Pokemon: ")
-        await sleep(500);
+    #showPokemonList(){
         Object.values(pokemons).map((pokemon, index) => {
             console.log(`${index + 1} ${pokemon.name} : ${pokemon.type} Type`)
             
         })
+    }
+
+    async selectPlayerPokemon() {
+        console.log("Available Pokemon: ")
+        await sleep(500);
+        this.#showPokemonList();
         await sleep(1000);
         console.log("======Choose Your Pokemon======")
         await sleep(1000);
@@ -154,7 +162,7 @@ class pokeBattle {
     }
 
     battleStatus() {
-        console.log(`\n${this.playerPoke.getName()} (Player): ${this.playerPoke.getCurrentHp()}/${this.playerPoke.getMaxHp()} HP`);
+        console.log(`${this.playerPoke.getName()} (Player): ${this.playerPoke.getCurrentHp()}/${this.playerPoke.getMaxHp()} HP`);
         console.log(`${this.enemyPoke.getName()} (enemy): ${this.enemyPoke.getCurrentHp()}/${this.enemyPoke.getMaxHp()} HP`);
 
     }

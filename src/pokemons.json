@@ -206,7 +206,7 @@
         "specialDefense": 85,
         "speed": 102
         },
-        "moves": ["earthquake", "dragonClaw", "stonedge", "swordsDance"]
+        "moves": ["earthquake", "dragonClaw", "stoneEdge", "swordsDance"]
     },
     "togekiss": {
         "name": "Togekiss",
@@ -245,7 +245,7 @@
         "specialDefense": 60,
         "speed": 80
         },
-        "moves": ["iciclecrash", "earthquake", "stoneedge", "iceShards"]
+        "moves": ["iciclecrash", "earthquake", "stoneEdge", "iceShards"]
     },
     "sceptile": {
         "name": "Sceptile",
@@ -284,6 +284,6 @@
         "specialDefense": 75,
         "speed": 95
         },
-        "moves": ["earthquake", "poisonJab", "stoneedge", "aerialAce"]
+        "moves": ["earthquake", "poisonJab", "stoneEdge", "aerialAce"]
     }
 }
