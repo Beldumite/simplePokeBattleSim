@@ -1,56 +1,5 @@
+
 {
-    "pikachu": {
-      "name": "Pikachu",
-      "type": "electric",
-      "stats": {
-        "hp": 35,
-        "attack": 55,
-        "defense": 40,
-        "specialAttack": 50,
-        "specialDefense": 50,
-        "speed": 90
-      },
-      "moves": ["thunderShock", "quickAttack", "thunderbolt", "tackle"]
-    },
-    "charmander": {
-      "name": "Charmander",
-      "type": "fire",
-      "stats": {
-        "hp": 39,
-        "attack": 52,
-        "defense": 43,
-        "specialAttack": 60,
-        "specialDefense": 50,
-        "speed": 65
-      },
-      "moves": ["scratch", "ember", "flamethrower", "tackle"]
-    },
-    "squirtle": {
-      "name": "Squirtle",
-      "type": "water",
-      "stats": {
-        "hp": 44,
-        "attack": 48,
-        "defense": 65,
-        "specialAttack": 50,
-        "specialDefense": 64,
-        "speed": 43
-      },
-      "moves": ["tackle", "waterGun", "hydroPump", "quickAttack"]
-    },
-    "bulbasaur": {
-      "name": "Bulbasaur",
-      "type": "grass",
-      "stats": {
-        "hp": 45,
-        "attack": 49,
-        "defense": 49,
-        "specialAttack": 65,
-        "specialDefense": 65,
-        "speed": 45
-      },
-      "moves": ["tackle", "vineWhip", "razorLeaf", "quickAttack"]
-    },
     "glaceon": {
         "name": "Glaceon",
         "type": "ice",
@@ -64,7 +13,7 @@
         },
         "moves": ["tackle", "quickAttack", "iceBeam", "blizzard"]
       },
-      "leafeon": {
+    "leafeon": {
         "name": "Leafeon",
         "type": "grass",
         "stats": {
@@ -76,6 +25,265 @@
           "speed": 95
         },
         "moves": ["tackle", "quickAttack", "razorLeaf", "solarBeam"]
-      }
-  }
-  
+      },
+    "raichu": {
+        "name": "Raichu",
+        "type": "electric",
+        "stats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "specialAttack": 90,
+        "specialDefense": 80,
+        "speed": 110
+        },
+        "moves": ["thunderShock", "quickAttack", "thunderbolt", "thunder"]
+    },
+    "charizard": {
+        "name": "Charizard",
+        "type": "fire",
+        "stats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "specialAttack": 109,
+        "specialDefense": 85,
+        "speed": 100
+        },
+        "moves": ["flamethrower", "dragonClaw", "airSlash", "fireBlast"]
+    },
+    "blastoise": {
+        "name": "Blastoise",
+        "type": "water",
+        "stats": {
+        "hp": 79,
+        "attack": 83,
+        "defense": 100,
+        "specialAttack": 85,
+        "specialDefense": 105,
+        "speed": 78
+        },
+        "moves": ["hydroPump", "iceBeam", "flashCannon", "skullBash"]
+    },
+    "venusaur": {
+        "name": "Venusaur",
+        "type": "grass",
+        "stats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 83,
+        "specialAttack": 100,
+        "specialDefense": 100,
+        "speed": 80
+        },
+        "moves": ["razorLeaf", "solarBeam", "synthesis", "sleepPowder"]
+    },
+    "machamp": {
+        "name": "Machamp",
+        "type": "fighting",
+        "stats": {
+        "hp": 90,
+        "attack": 130,
+        "defense": 80,
+        "specialAttack": 65,
+        "specialDefense": 85,
+        "speed": 55
+        },
+        "moves": ["dynamicPunch", "crossChop", "bulletPunch", "closeCombat"]
+    },
+    "gengar": {
+        "name": "Gengar",
+        "type": "ghost",
+        "stats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 60,
+        "specialAttack": 130,
+        "specialDefense": 75,
+        "speed": 110
+        },
+        "moves": ["shadowBall", "sludgeBomb", "darkPulse", "hypnosis"]
+    },
+    "dragonite": {
+        "name": "Dragonite",
+        "type": "dragon",
+        "stats": {
+        "hp": 91,
+        "attack": 134,
+        "defense": 95,
+        "specialAttack": 100,
+        "specialDefense": 100,
+        "speed": 80
+        },
+        "moves": ["dragonClaw", "hurricane", "thunderPunch", "extremeSpeed"]
+    },
+    "tyranitar": {
+        "name": "Tyranitar",
+        "type": "rock",
+        "stats": {
+        "hp": 100,
+        "attack": 134,
+        "defense": 110,
+        "specialAttack": 95,
+        "specialDefense": 100,
+        "speed": 61
+        },
+        "moves": ["stoneEdge", "crunch", "earthquake", "thunderPunch"]
+    },
+    "scizor": {
+        "name": "Scizor",
+        "type": "bug",
+        "stats": {
+        "hp": 70,
+        "attack": 130,
+        "defense": 100,
+        "specialAttack": 55,
+        "specialDefense": 80,
+        "speed": 65
+        },
+        "moves": ["bulletPunch", "xScissor", "swordsDance", "ironHead"]
+    },
+    "steelix": {
+        "name": "Steelix",
+        "type": "steel",
+        "stats": {
+        "hp": 75,
+        "attack": 85,
+        "defense": 200,
+        "specialAttack": 55,
+        "specialDefense": 65,
+        "speed": 30
+        },
+        "moves": ["ironTail", "earthquake", "rockSlide", "crunch"]
+    },
+    "absol": {
+        "name": "Absol",
+        "type": "dark",
+        "stats": {
+        "hp": 65,
+        "attack": 130,
+        "defense": 60,
+        "specialAttack": 75,
+        "specialDefense": 60,
+        "speed": 75
+        },
+        "moves": ["nightSlash", "psychoCut", "swordsDance", "superpower"]
+    },
+    "alakazam": {
+        "name": "Alakazam",
+        "type": "psychic",
+        "stats": {
+        "hp": 55,
+        "attack": 50,
+        "defense": 45,
+        "specialAttack": 135,
+        "specialDefense": 95,
+        "speed": 120
+        },
+        "moves": ["psychic", "shadowBall", "focusBlast", "calmMind"]
+    },
+    "toxtricity": {
+        "name": "Toxtricity",
+        "type": "poison",
+        "stats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 70,
+        "specialAttack": 114,
+        "specialDefense": 70,
+        "speed": 75
+        },
+        "moves": ["overdrive", "poisonJab", "boomburst", "shiftGear"]
+    },
+    "garchomp": {
+        "name": "Garchomp",
+        "type": "ground",
+        "stats": {
+        "hp": 108,
+        "attack": 130,
+        "defense": 95,
+        "specialAttack": 80,
+        "specialDefense": 85,
+        "speed": 102
+        },
+        "moves": ["earthquake", "dragonClaw", "stonedge", "swordsDance"]
+    },
+    "togekiss": {
+        "name": "Togekiss",
+        "type": "fairy",
+        "stats": {
+        "hp": 85,
+        "attack": 50,
+        "defense": 95,
+        "specialAttack": 120,
+        "specialDefense": 115,
+        "speed": 80
+        },
+        "moves": ["airSlash", "dazzlingGleam", "aurasphere", "roost"]
+    },
+    "noivern": {
+        "name": "Noivern",
+        "type": "flying",
+        "stats": {
+        "hp": 85,
+        "attack": 70,
+        "defense": 80,
+        "specialAttack": 97,
+        "specialDefense": 80,
+        "speed": 123
+        },
+        "moves": ["hurricane", "dragonPulse", "boomburst", "flamethrower"]
+    },
+    "mamoswine": {
+        "name": "Mamoswine",
+        "type": "ice",
+        "stats": {
+        "hp": 110,
+        "attack": 130,
+        "defense": 80,
+        "specialAttack": 70,
+        "specialDefense": 60,
+        "speed": 80
+        },
+        "moves": ["iciclecrash", "earthquake", "stoneedge", "iceShards"]
+    },
+    "sceptile": {
+        "name": "Sceptile",
+        "type": "grass",
+        "stats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 65,
+        "specialAttack": 105,
+        "specialDefense": 85,
+        "speed": 120
+        },
+        "moves": ["leafBlade", "dragonPulse", "earthquake", "rockSlide"]
+    },
+    "hydreigon": {
+        "name": "Hydreigon",
+        "type": "dragon",
+        "stats": {
+        "hp": 92,
+        "attack": 105,
+        "defense": 90,
+        "specialAttack": 125,
+        "specialDefense": 90,
+        "speed": 98
+        },
+        "moves": ["darkPulse", "dragonPulse", "flamethrower", "flashCannon"]
+    },
+    "gliscor": {
+        "name": "Gliscor",
+        "type": "ground",
+        "stats": {
+        "hp": 75,
+        "attack": 95,
+        "defense": 125,
+        "specialAttack": 45,
+        "specialDefense": 75,
+        "speed": 95
+        },
+        "moves": ["earthquake", "poisonJab", "stoneedge", "aerialAce"]
+    }
+}

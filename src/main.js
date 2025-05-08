@@ -130,6 +130,9 @@ class pokeBattle {
             return await this.selectPlayerPokemon()
         }
         const selectedIndex = answer - 1;
+        console.log(Object.values(pokemons)[selectedIndex])
+        console.log(Object.values(pokemons)[1])
+        console.log(Object.values(pokemons)[4])
         
         this.playerPoke = new Pokemon(Object.values(pokemons)[selectedIndex])
         console.log(`So you choose ${this.playerPoke.getName()} huh? interesting`)
