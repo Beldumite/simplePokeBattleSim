@@ -121,7 +121,7 @@ class pokeBattle {
             console.log(`${index + 1} ${pokemon.name} : ${pokemon.type} Type`)
             
         })
-    }
+    }//abstraction
 
     async selectPlayerPokemon() {
         console.log("Available Pokemon: ")
@@ -138,9 +138,6 @@ class pokeBattle {
             return await this.selectPlayerPokemon()
         }
         const selectedIndex = answer - 1;
-        console.log(Object.values(pokemons)[selectedIndex])
-        console.log(Object.values(pokemons)[1])
-        console.log(Object.values(pokemons)[4])
         
         this.playerPoke = new Pokemon(Object.values(pokemons)[selectedIndex])
         console.log(`So you choose ${this.playerPoke.getName()} huh? interesting`)
@@ -161,10 +158,10 @@ class pokeBattle {
         await sleep(1000);
     }
 
-    battleStatus() {
+    async battleStatus() {
         console.log(`${this.playerPoke.getName()} (Player): ${this.playerPoke.getCurrentHp()}/${this.playerPoke.getMaxHp()} HP`);
         console.log(`${this.enemyPoke.getName()} (enemy): ${this.enemyPoke.getCurrentHp()}/${this.enemyPoke.getMaxHp()} HP`);
-
+        await sleep(1500)
     }
 
     async battleLoop() {
@@ -199,6 +196,7 @@ class pokeBattle {
 
     async #playerTurn() {
         console.log(" ==== Your Trun ===")
+        await sleep(1000);
         console.log("Movesets: ")
         await sleep(500);
         
@@ -231,10 +229,10 @@ class pokeBattle {
 
     async #enemyTurn() {
         console.log("=== Enemy Turn ==")
-        await sleep(500);
+        await sleep(1000);
         const selectedMove = this.enemyPoke.getMoves()[Math.floor(Math.random() * this.enemyPoke.getMoves().length)]
         console.log(`enemy ${this.enemyPoke.getName()} used ${selectedMove.name}`)
-        await sleep(500);
+        await sleep(1500);
 
         selectedMove.currentpp--;
         await this.#executeAttack(this.enemyPoke, this.playerPoke, selectedMove)
@@ -256,6 +254,7 @@ class pokeBattle {
         if (isCritical) {
           damage = Math.floor(damage * 1.5);
           console.log("A critical hit!");
+          await sleep(1500)
         }
 
         // ini akurat kek di game btw
@@ -264,6 +263,7 @@ class pokeBattle {
         damage = Math.max(1, damage);
 
         defender.getAttacked(damage)
+        await sleep(1000);
 
         if (typeEffectiveness > 1) {
         console.log("It's super effective!");
